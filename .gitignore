@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+build/
+dist/
+*.egg
+.ipynb_checkpoints/
+
+# Hugging Face / model caches
+.cache/huggingface/
+hf_cache/
+huggingface_cache/

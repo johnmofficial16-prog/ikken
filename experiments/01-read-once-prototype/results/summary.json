@@ -1,0 +1,13 @@
+{
+ "exactness_files": [
+  "exactness_ettin-17m_ettin-68m_modernbert-base.json"
+ ],
+ "latency_files": [
+  "latency_ettin-68m.json",
+  "latency_ettin-68m_bs1.json"
+ ],
+ "train_files": [
+  "train_cross_ettin-17m_raw.json",
+  "train_readonce_ettin-17m_raw.json"
+ ]
+}

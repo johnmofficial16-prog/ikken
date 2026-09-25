@@ -1,0 +1,151 @@
+{
+ "started": "2026-09-23 16:20:06",
+ "tests": {
+  "env": {
+   "ok": true,
+   "result": {
+    "python": "3.13.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.14.0+cpu",
+    "cuda": null,
+    "transformers": "5.17.0",
+    "tokenizers": "0.23.2",
+    "huggingface_hub": "1.32.0",
+    "device": "cpu"
+   },
+   "seconds": 2.2
+  },
+  "exactness_ettin-68m": {
+   "ok": true,
+   "result": {
+    "fp32": {
+     "max_abs_prob_diff": 8.940696716308594e-08,
+     "argmax_agree": 21,
+     "n_questions": 21
+    },
+    "fp32_negative_control_index_window": {
+     "max_abs_prob_diff": 0.009662330150604248,
+     "argmax_agree": 19,
+     "n_questions": 21
+    },
+    "cases": {
+     "short_records": 2,
+     "long_state_tokens": 256,
+     "long_state_questions": 3
+    }
+   },
+   "seconds": 8.4
+  },
+  "activations_ettin-68m": {
+   "ok": true,
+   "result": {
+    "shape": {
+     "S": 256,
+     "K": 2,
+     "rows": 1,
+     "L": 313
+    },
+    "fp32": {
+     "global_max_abs": 7546.3,
+     "headroom_vs_fp16_max": 8.68,
+     "nonfinite_values": 0,
+     "logits_finite": true,
+     "top_modules": [
+      [
+       "layers.16",
+       7546.3
+      ],
+      [
+       "layers.13",
+       7545.5
+      ],
+      [
+       "layers.17",
+       7545.0
+      ],
+      [
+       "layers.14",
+       7544.4
+      ],
+      [
+       "layers.15",
+       7543.1
+      ],
+      [
+       "layers.18",
+       7539.1
+      ],
+      [
+       "layers.13.mlp.Wo",
+       7524.9
+      ],
+      [
+       "layers.4.mlp.drop",
+       6486.0
+      ]
+     ]
+    }
+   },
+   "seconds": 2.5
+  },
+  "train_readonce_ettin-68m_S128_K2_bs2_fp16": {
+   "ok": true,
+   "result": {
+    "arch": "readonce",
+    "amp_fp16": false,
+    "S": 128,
+    "K": 2,
+    "bs": 2,
+    "rows_per_step": 2,
+    "L": 222,
+    "median_step_ms": 1822.1,
+    "tokens_per_s": 257.7,
+    "questions_per_s": 2.2,
+    "peak_mem_gb": null,
+    "loss_first": 1.9104,
+    "loss_last": 1.7019,
+    "nonfinite_losses": 0,
+    "grad_scaler_scale_end": null
+   },
+   "seconds": 8.8
+  },
+  "sdpa_backends_ettin-68m": {
+   "ok": true,
+   "result": {
+    "S": 256,
+    "K": 2,
+    "bs": 1,
+    "EFFICIENT_ATTENTION": {
+     "ok": false,
+     "error": "RuntimeError('No viable backend for scaled_dot_product_attention was found. This is likely due to turning off both the math kernel and the fused kernels.')"
+    },
+    "MATH": {
+     "ok": true,
+     "median_fwd_bwd_ms": 470.0
+    }
+   },
+   "seconds": 5.1
+  },
+  "flex": {
+   "ok": true,
+   "result": {
+    "L": 336,
+    "compiled_ok": false,
+    "error": "InductorError('LoweringException: InvalidCxxCompiler: Compiler: cl is not found.\\n  target: flex_attention\\n  args[0]: TensorBox(StorageBox(\\n    InputBuffer(name=\\'arg0_1\\', layout=FixedLayout(\\'cpu\\', torch.float32, size=[1, 8, 336, 64], stride=[172032, 21504, 64, 1]))\\n  ))\\n  args[1]: TensorBox(StorageBox(\\n    InputBuffer(name=\\'arg1_1\\', layout=FixedLayout(\\'cpu\\', torch.float32, size=[1, 8, 336, 64], stride=[172032, 21504, 64, 1]))\\n  ))\\n  args[2]: TensorBox(StorageBox(\\n    InputBuffer(name=\\'arg2_1\\', layout=FixedLayout(\\'cpu\\', torch.float32, size=[1, 8, 336, 64], stride=[172032, 21"
+   },
+   "seconds": 20.3
+  },
+  "resume_ettin-32m": {
+   "ok": true,
+   "result": {
+    "loss_continued": 1.418220043182373,
+    "loss_resumed": 1.418220043182373,
+    "abs_diff": 0.0,
+    "checkpoint_mb": 821.1
+   },
+   "seconds": 30.7
+  }
+ },
+ "mode": "dry-run",
+ "finished": "2026-09-23 16:21:25"
+}

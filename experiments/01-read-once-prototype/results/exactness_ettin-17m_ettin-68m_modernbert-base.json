@@ -1,0 +1,1007 @@
+{
+ "env": {
+  "timestamp": "2026-09-23 17:24:32",
+  "python": "3.13.1",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+  "physical_cores": 8,
+  "logical_cpus": 16,
+  "ram_total_gb": 16.54,
+  "ram_available_gb": 5.75,
+  "versions": {
+   "torch": "2.14.0+cpu",
+   "transformers": "5.17.0",
+   "tokenizers": "0.23.2",
+   "huggingface_hub": "1.32.0",
+   "safetensors": "0.8.0",
+   "numpy": "2.5.3",
+   "psutil": "7.2.2"
+  },
+  "torch_threads": 8,
+  "torch_cpu_capability": "AVX2",
+  "power_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+  "battery": {
+   "percent": 81,
+   "plugged_in": false
+  },
+  "background_cpu_percent_1s": 8.4
+ },
+ "results": [
+  {
+   "model": "ettin-17m",
+   "attn": "sdpa",
+   "dtype": "torch.float32",
+   "backbone": {
+    "class": "ModernBertModel",
+    "model_type": "modernbert",
+    "hidden_size": 256,
+    "num_layers": 7,
+    "num_heads": 4,
+    "intermediate_size": 384,
+    "layer_types": [
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention"
+    ],
+    "local_attention": 128,
+    "sliding_window_half": 64,
+    "max_position_embeddings": 7999,
+    "rope_parameters": {
+     "sliding_attention": {
+      "rope_type": "default",
+      "rope_theta": 160000.0
+     },
+     "full_attention": {
+      "rope_type": "default",
+      "rope_theta": 160000.0
+     }
+    },
+    "vocab_size": 50368,
+    "params_total": 16797440,
+    "params_non_embedding": 3903232,
+    "attn_implementation": "sdpa"
+   },
+   "runs": [
+    {
+     "S": 128,
+     "K": 20,
+     "n_options": [
+      11,
+      7,
+      2,
+      12,
+      2,
+      4,
+      5,
+      3,
+      8,
+      7,
+      2,
+      3,
+      2,
+      5,
+      2,
+      2,
+      2,
+      2,
+      6,
+      2
+     ],
+     "packed_vs_single": {
+      "max_abs_diff_block_hidden": 3.0517578125e-05,
+      "max_abs_diff_marker_hidden": 1.33514404296875e-05,
+      "max_abs_diff_logits": 2.980232238769531e-07,
+      "max_abs_diff_probs": 6.332913882189928e-08,
+      "argmax_agree": "20/20",
+      "max_abs_hidden_value": 71.82781219482422,
+      "packed_len": 860,
+      "state_len": 128,
+      "question_tokens": 732
+     },
+     "state_hidden_max_abs_diff_vs_state_only": 0.0,
+     "reverse_order_max_abs_diff_probs": 4.841734069227499e-08,
+     "padded_batch_max_abs_diff_logits": 2.980232238769531e-07,
+     "custom_mask_vs_stock_on_unpacked_rows_max_abs_diff_logits": 0.0,
+     "seconds": 1.0
+    },
+    {
+     "S": 512,
+     "K": 20,
+     "n_options": [
+      5,
+      2,
+      24,
+      29,
+      6,
+      12,
+      2,
+      3,
+      6,
+      4,
+      7,
+      2,
+      12,
+      2,
+      2,
+      2,
+      3,
+      5,
+      2,
+      2
+     ],
+     "packed_vs_single": {
+      "max_abs_diff_block_hidden": 3.4332275390625e-05,
+      "max_abs_diff_marker_hidden": 1.9550323486328125e-05,
+      "max_abs_diff_logits": 2.980232238769531e-07,
+      "max_abs_diff_probs": 8.19381513195161e-08,
+      "argmax_agree": "20/20",
+      "max_abs_hidden_value": 70.72655487060547,
+      "packed_len": 1246,
+      "state_len": 512,
+      "question_tokens": 734
+     },
+     "state_hidden_max_abs_diff_vs_state_only": 0.0,
+     "reverse_order_max_abs_diff_probs": 5.214245990536881e-08,
+     "padded_batch_max_abs_diff_logits": 1.7881393432617188e-07,
+     "custom_mask_vs_stock_on_unpacked_rows_max_abs_diff_logits": 0.0,
+     "negative_controls": {
+      "sequential_positions": {
+       "max_abs_diff_block_hidden": 9.408038139343262,
+       "max_abs_diff_logits": 0.03791937232017517,
+       "max_abs_diff_probs": 0.004163865370707898,
+       "argmax_agree": "17/20"
+      },
+      "blocks_see_each_other": {
+       "max_abs_diff_block_hidden": 25.63216781616211,
+       "max_abs_diff_logits": 0.17710597813129425,
+       "max_abs_diff_probs": 0.020334794270197798,
+       "argmax_agree": "9/20"
+      },
+      "sliding_window_on_sequence_index": {
+       "max_abs_diff_block_hidden": 5.268440246582031,
+       "max_abs_diff_logits": 0.010080069303512573,
+       "max_abs_diff_probs": 0.0016963761025033386,
+       "argmax_agree": "19/20"
+      }
+     },
+     "seconds": 5.1
+    },
+    {
+     "S": 2048,
+     "K": 20,
+     "n_options": [
+      7,
+      5,
+      6,
+      7,
+      5,
+      2,
+      3,
+      2,
+      2,
+      2,
+      6,
+      2,
+      5,
+      2,
+      7,
+      2,
+      2,
+      12,
+      2,
+      2
+     ],
+     "packed_vs_single": {
+      "max_abs_diff_block_hidden": 3.24249267578125e-05,
+      "max_abs_diff_marker_hidden": 1.71661376953125e-05,
+      "max_abs_diff_logits": 2.5331974029541016e-07,
+      "max_abs_diff_probs": 7.450576755552163e-08,
+      "argmax_agree": "20/20",
+      "max_abs_hidden_value": 68.8974838256836,
+      "packed_len": 2648,
+      "state_len": 2048,
+      "question_tokens": 600
+     },
+     "state_hidden_max_abs_diff_vs_state_only": 0.0,
+     "reverse_order_max_abs_diff_probs": 5.960461402221284e-08,
+     "padded_batch_max_abs_diff_logits": 2.086162567138672e-07,
+     "custom_mask_vs_stock_on_unpacked_rows_max_abs_diff_logits": 0.0,
+     "seconds": 12.2
+    }
+   ]
+  },
+  {
+   "model": "ettin-17m",
+   "attn": "eager",
+   "dtype": "torch.float32",
+   "backbone": {
+    "class": "ModernBertModel",
+    "model_type": "modernbert",
+    "hidden_size": 256,
+    "num_layers": 7,
+    "num_heads": 4,
+    "intermediate_size": 384,
+    "layer_types": [
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention"
+    ],
+    "local_attention": 128,
+    "sliding_window_half": 64,
+    "max_position_embeddings": 7999,
+    "rope_parameters": {
+     "sliding_attention": {
+      "rope_type": "default",
+      "rope_theta": 160000.0
+     },
+     "full_attention": {
+      "rope_type": "default",
+      "rope_theta": 160000.0
+     }
+    },
+    "vocab_size": 50368,
+    "params_total": 16797440,
+    "params_non_embedding": 3903232,
+    "attn_implementation": "eager"
+   },
+   "runs": [
+    {
+     "S": 512,
+     "K": 20,
+     "n_options": [
+      5,
+      2,
+      24,
+      29,
+      6,
+      12,
+      2,
+      3,
+      6,
+      4,
+      7,
+      2,
+      12,
+      2,
+      2,
+      2,
+      3,
+      5,
+      2,
+      2
+     ],
+     "packed_vs_single": {
+      "max_abs_diff_block_hidden": 2.86102294921875e-05,
+      "max_abs_diff_marker_hidden": 1.7344951629638672e-05,
+      "max_abs_diff_logits": 2.8312206268310547e-07,
+      "max_abs_diff_probs": 5.779309797393495e-08,
+      "argmax_agree": "20/20",
+      "max_abs_hidden_value": 70.7265625,
+      "packed_len": 1246,
+      "state_len": 512,
+      "question_tokens": 734
+     },
+     "state_hidden_max_abs_diff_vs_state_only": 0.0,
+     "reverse_order_max_abs_diff_probs": 7.821368996907552e-08,
+     "padded_batch_max_abs_diff_logits": 1.9371509552001953e-07,
+     "custom_mask_vs_stock_on_unpacked_rows_max_abs_diff_logits": 0.0,
+     "negative_controls": {
+      "sequential_positions": {
+       "max_abs_diff_block_hidden": 9.408020973205566,
+       "max_abs_diff_logits": 0.0379192978143692,
+       "max_abs_diff_probs": 0.004163891448172308,
+       "argmax_agree": "17/20"
+      },
+      "blocks_see_each_other": {
+       "max_abs_diff_block_hidden": 25.63218116760254,
+       "max_abs_diff_logits": 0.17710593342781067,
+       "max_abs_diff_probs": 0.020334773023059804,
+       "argmax_agree": "9/20"
+      },
+      "sliding_window_on_sequence_index": {
+       "max_abs_diff_block_hidden": 5.2684326171875,
+       "max_abs_diff_logits": 0.010080128908157349,
+       "max_abs_diff_probs": 0.0016963831833244347,
+       "argmax_agree": "19/20"
+      }
+     },
+     "seconds": 7.0
+    }
+   ]
+  },
+  {
+   "model": "ettin-17m",
+   "attn": "sdpa",
+   "dtype": "torch.float64",
+   "backbone": {
+    "class": "ModernBertModel",
+    "model_type": "modernbert",
+    "hidden_size": 256,
+    "num_layers": 7,
+    "num_heads": 4,
+    "intermediate_size": 384,
+    "layer_types": [
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention"
+    ],
+    "local_attention": 128,
+    "sliding_window_half": 64,
+    "max_position_embeddings": 7999,
+    "rope_parameters": {
+     "sliding_attention": {
+      "rope_type": "default",
+      "rope_theta": 160000.0
+     },
+     "full_attention": {
+      "rope_type": "default",
+      "rope_theta": 160000.0
+     }
+    },
+    "vocab_size": 50368,
+    "params_total": 16797440,
+    "params_non_embedding": 3903232,
+    "attn_implementation": "sdpa"
+   },
+   "runs": [
+    {
+     "S": 512,
+     "K": 20,
+     "n_options": [
+      5,
+      2,
+      24,
+      29,
+      6,
+      12,
+      2,
+      3,
+      6,
+      4,
+      7,
+      2,
+      12,
+      2,
+      2,
+      2,
+      3,
+      5,
+      2,
+      2
+     ],
+     "packed_vs_single": {
+      "max_abs_diff_block_hidden": 6.750155989720952e-14,
+      "max_abs_diff_marker_hidden": 3.375077994860476e-14,
+      "max_abs_diff_logits": 0.0,
+      "max_abs_diff_probs": 0.0,
+      "argmax_agree": "20/20",
+      "max_abs_hidden_value": 70.7265627762359,
+      "packed_len": 1246,
+      "state_len": 512,
+      "question_tokens": 734
+     },
+     "state_hidden_max_abs_diff_vs_state_only": 0.0,
+     "reverse_order_max_abs_diff_probs": 0.0,
+     "padded_batch_max_abs_diff_logits": 0.0,
+     "custom_mask_vs_stock_on_unpacked_rows_max_abs_diff_logits": 0.0,
+     "negative_controls": {
+      "sequential_positions": {
+       "max_abs_diff_block_hidden": 9.40804883390057,
+       "max_abs_diff_logits": 0.03791928291320801,
+       "max_abs_diff_probs": 0.004163813225235846,
+       "argmax_agree": "17/20"
+      },
+      "blocks_see_each_other": {
+       "max_abs_diff_block_hidden": 25.632161409290077,
+       "max_abs_diff_logits": 0.17710578441619873,
+       "max_abs_diff_probs": 0.020334786801355198,
+       "argmax_agree": "9/20"
+      },
+      "sliding_window_on_sequence_index": {
+       "max_abs_diff_block_hidden": 5.26843332605689,
+       "max_abs_diff_logits": 0.010080069303512573,
+       "max_abs_diff_probs": 0.0016963810504255772,
+       "argmax_agree": "19/20"
+      }
+     },
+     "seconds": 14.9
+    }
+   ]
+  },
+  {
+   "model": "ettin-17m",
+   "attn": "sdpa",
+   "dtype": "torch.float32",
+   "backbone": {
+    "class": "ModernBertModel",
+    "model_type": "modernbert",
+    "hidden_size": 256,
+    "num_layers": 7,
+    "num_heads": 4,
+    "intermediate_size": 384,
+    "layer_types": [
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention"
+    ],
+    "local_attention": 128,
+    "sliding_window_half": 64,
+    "max_position_embeddings": 7999,
+    "rope_parameters": {
+     "sliding_attention": {
+      "rope_type": "default",
+      "rope_theta": 160000.0
+     },
+     "full_attention": {
+      "rope_type": "default",
+      "rope_theta": 160000.0
+     }
+    },
+    "vocab_size": 50368,
+    "params_total": 16797440,
+    "params_non_embedding": 3903232,
+    "attn_implementation": "sdpa"
+   },
+   "runs": [
+    {
+     "S": 7936,
+     "K": 10,
+     "n_options": [
+      4,
+      3,
+      5,
+      2,
+      2,
+      2,
+      2,
+      11,
+      2,
+      2
+     ],
+     "packed_vs_single": {
+      "max_abs_diff_block_hidden": 2.47955322265625e-05,
+      "max_abs_diff_marker_hidden": 1.1444091796875e-05,
+      "max_abs_diff_logits": 2.2351741790771484e-07,
+      "max_abs_diff_probs": 5.585615908687558e-08,
+      "argmax_agree": "10/10",
+      "max_abs_hidden_value": 68.03192901611328,
+      "packed_len": 8157,
+      "state_len": 7936,
+      "question_tokens": 221
+     },
+     "state_hidden_max_abs_diff_vs_state_only": 7.152557373046875e-05,
+     "reverse_order_max_abs_diff_probs": 5.215092907517871e-08,
+     "padded_batch_max_abs_diff_logits": 5.960464477539063e-08,
+     "custom_mask_vs_stock_on_unpacked_rows_max_abs_diff_logits": 0.0,
+     "seconds": 89.4
+    }
+   ]
+  },
+  {
+   "model": "ettin-68m",
+   "attn": "sdpa",
+   "dtype": "torch.float32",
+   "backbone": {
+    "class": "ModernBertModel",
+    "model_type": "modernbert",
+    "hidden_size": 512,
+    "num_layers": 19,
+    "num_heads": 8,
+    "intermediate_size": 768,
+    "layer_types": [
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention"
+    ],
+    "local_attention": 128,
+    "sliding_window_half": 64,
+    "max_position_embeddings": 7999,
+    "rope_parameters": {
+     "sliding_attention": {
+      "rope_type": "default",
+      "rope_theta": 160000.0
+     },
+     "full_attention": {
+      "rope_type": "default",
+      "rope_theta": 160000.0
+     }
+    },
+    "vocab_size": 50368,
+    "params_total": 68144640,
+    "params_non_embedding": 42356224,
+    "attn_implementation": "sdpa"
+   },
+   "runs": [
+    {
+     "S": 128,
+     "K": 20,
+     "n_options": [
+      11,
+      7,
+      2,
+      12,
+      2,
+      4,
+      5,
+      3,
+      8,
+      7,
+      2,
+      3,
+      2,
+      5,
+      2,
+      2,
+      2,
+      2,
+      6,
+      2
+     ],
+     "packed_vs_single": {
+      "max_abs_diff_block_hidden": 0.00746917724609375,
+      "max_abs_diff_marker_hidden": 5.936622619628906e-05,
+      "max_abs_diff_logits": 2.086162567138672e-07,
+      "max_abs_diff_probs": 4.4685096151075854e-08,
+      "argmax_agree": "20/20",
+      "max_abs_hidden_value": 149.7759246826172,
+      "packed_len": 860,
+      "state_len": 128,
+      "question_tokens": 732
+     },
+     "state_hidden_max_abs_diff_vs_state_only": 0.0,
+     "reverse_order_max_abs_diff_probs": 3.7232057215064174e-08,
+     "padded_batch_max_abs_diff_logits": 2.384185791015625e-07,
+     "custom_mask_vs_stock_on_unpacked_rows_max_abs_diff_logits": 0.0,
+     "seconds": 6.0
+    },
+    {
+     "S": 512,
+     "K": 20,
+     "n_options": [
+      5,
+      2,
+      24,
+      29,
+      6,
+      12,
+      2,
+      3,
+      6,
+      4,
+      7,
+      2,
+      12,
+      2,
+      2,
+      2,
+      3,
+      5,
+      2,
+      2
+     ],
+     "packed_vs_single": {
+      "max_abs_diff_block_hidden": 0.00147247314453125,
+      "max_abs_diff_marker_hidden": 4.57763671875e-05,
+      "max_abs_diff_logits": 4.470348358154297e-07,
+      "max_abs_diff_probs": 1.0430582803033772e-07,
+      "argmax_agree": "20/20",
+      "max_abs_hidden_value": 147.37757873535156,
+      "packed_len": 1246,
+      "state_len": 512,
+      "question_tokens": 734
+     },
+     "state_hidden_max_abs_diff_vs_state_only": 0.0,
+     "reverse_order_max_abs_diff_probs": 6.703344046510296e-08,
+     "padded_batch_max_abs_diff_logits": 2.086162567138672e-07,
+     "custom_mask_vs_stock_on_unpacked_rows_max_abs_diff_logits": 0.0,
+     "negative_controls": {
+      "sequential_positions": {
+       "max_abs_diff_block_hidden": 152.4131317138672,
+       "max_abs_diff_logits": 0.052782878279685974,
+       "max_abs_diff_probs": 0.021074325002108374,
+       "argmax_agree": "15/20"
+      },
+      "blocks_see_each_other": {
+       "max_abs_diff_block_hidden": 224.76051330566406,
+       "max_abs_diff_logits": 0.111259326338768,
+       "max_abs_diff_probs": 0.013590432918799633,
+       "argmax_agree": "10/20"
+      },
+      "sliding_window_on_sequence_index": {
+       "max_abs_diff_block_hidden": 151.4017333984375,
+       "max_abs_diff_logits": 0.03468739986419678,
+       "max_abs_diff_probs": 0.012710741174404072,
+       "argmax_agree": "12/20"
+      }
+     },
+     "seconds": 37.5
+    },
+    {
+     "S": 2048,
+     "K": 20,
+     "n_options": [
+      7,
+      5,
+      6,
+      7,
+      5,
+      2,
+      3,
+      2,
+      2,
+      2,
+      6,
+      2,
+      5,
+      2,
+      7,
+      2,
+      2,
+      12,
+      2,
+      2
+     ],
+     "packed_vs_single": {
+      "max_abs_diff_block_hidden": 0.00164794921875,
+      "max_abs_diff_marker_hidden": 4.57763671875e-05,
+      "max_abs_diff_logits": 3.2782554626464844e-07,
+      "max_abs_diff_probs": 9.679577661625416e-08,
+      "argmax_agree": "20/20",
+      "max_abs_hidden_value": 151.23199462890625,
+      "packed_len": 2648,
+      "state_len": 2048,
+      "question_tokens": 600
+     },
+     "state_hidden_max_abs_diff_vs_state_only": 0.0,
+     "reverse_order_max_abs_diff_probs": 5.58580602882941e-08,
+     "padded_batch_max_abs_diff_logits": 3.129243850708008e-07,
+     "custom_mask_vs_stock_on_unpacked_rows_max_abs_diff_logits": 0.0,
+     "seconds": 73.2
+    }
+   ]
+  },
+  {
+   "model": "ettin-68m",
+   "attn": "sdpa",
+   "dtype": "torch.float32",
+   "backbone": {
+    "class": "ModernBertModel",
+    "model_type": "modernbert",
+    "hidden_size": 512,
+    "num_layers": 19,
+    "num_heads": 8,
+    "intermediate_size": 768,
+    "layer_types": [
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention"
+    ],
+    "local_attention": 128,
+    "sliding_window_half": 64,
+    "max_position_embeddings": 7999,
+    "rope_parameters": {
+     "sliding_attention": {
+      "rope_type": "default",
+      "rope_theta": 160000.0
+     },
+     "full_attention": {
+      "rope_type": "default",
+      "rope_theta": 160000.0
+     }
+    },
+    "vocab_size": 50368,
+    "params_total": 68144640,
+    "params_non_embedding": 42356224,
+    "attn_implementation": "sdpa"
+   },
+   "runs": [
+    {
+     "S": 512,
+     "K": 50,
+     "n_options": [
+      2,
+      24,
+      7,
+      7,
+      6,
+      7,
+      2,
+      2,
+      29,
+      20,
+      2,
+      12,
+      2,
+      2,
+      2,
+      2,
+      2,
+      6,
+      2,
+      2,
+      2,
+      5,
+      27,
+      4,
+      3,
+      6,
+      2,
+      8,
+      2,
+      5,
+      4,
+      5,
+      2,
+      2,
+      2,
+      5,
+      2,
+      2,
+      2,
+      29,
+      2,
+      7,
+      3,
+      2,
+      12,
+      2,
+      7,
+      2,
+      5,
+      3
+     ],
+     "packed_vs_single": {
+      "max_abs_diff_block_hidden": 0.00225067138671875,
+      "max_abs_diff_marker_hidden": 0.000244140625,
+      "max_abs_diff_logits": 1.0132789611816406e-06,
+      "max_abs_diff_probs": 8.939284612541343e-08,
+      "argmax_agree": "50/50",
+      "max_abs_hidden_value": 149.7361602783203,
+      "packed_len": 2379,
+      "state_len": 512,
+      "question_tokens": 1867
+     },
+     "state_hidden_max_abs_diff_vs_state_only": 0.0,
+     "reverse_order_max_abs_diff_probs": 7.820759295729118e-08,
+     "padded_batch_max_abs_diff_logits": 2.384185791015625e-07,
+     "custom_mask_vs_stock_on_unpacked_rows_max_abs_diff_logits": 0.0,
+     "seconds": 31.1
+    }
+   ]
+  },
+  {
+   "model": "modernbert-base",
+   "attn": "sdpa",
+   "dtype": "torch.float32",
+   "backbone": {
+    "class": "ModernBertModel",
+    "model_type": "modernbert",
+    "hidden_size": 768,
+    "num_layers": 22,
+    "num_heads": 12,
+    "intermediate_size": 1152,
+    "layer_types": [
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention",
+     "sliding_attention",
+     "sliding_attention",
+     "full_attention"
+    ],
+    "local_attention": 128,
+    "sliding_window_half": 64,
+    "max_position_embeddings": 8192,
+    "rope_parameters": {
+     "sliding_attention": {
+      "rope_type": "default",
+      "rope_theta": 10000.0
+     },
+     "full_attention": {
+      "rope_type": "default",
+      "rope_theta": 160000.0
+     }
+    },
+    "vocab_size": 50368,
+    "params_total": 149014272,
+    "params_non_embedding": 110331648,
+    "attn_implementation": "sdpa"
+   },
+   "runs": [
+    {
+     "S": 128,
+     "K": 20,
+     "n_options": [
+      11,
+      7,
+      2,
+      12,
+      2,
+      4,
+      5,
+      3,
+      8,
+      7,
+      2,
+      3,
+      2,
+      5,
+      2,
+      2,
+      2,
+      2,
+      6,
+      2
+     ],
+     "packed_vs_single": {
+      "max_abs_diff_block_hidden": 0.0008699893951416016,
+      "max_abs_diff_marker_hidden": 1.9073486328125e-05,
+      "max_abs_diff_logits": 4.172325134277344e-07,
+      "max_abs_diff_probs": 9.821133706289231e-08,
+      "argmax_agree": "20/20",
+      "max_abs_hidden_value": 42.988914489746094,
+      "packed_len": 860,
+      "state_len": 128,
+      "question_tokens": 732
+     },
+     "state_hidden_max_abs_diff_vs_state_only": 0.0,
+     "reverse_order_max_abs_diff_probs": 1.0803277461501892e-07,
+     "padded_batch_max_abs_diff_logits": 4.023313522338867e-07,
+     "custom_mask_vs_stock_on_unpacked_rows_max_abs_diff_logits": 0.0,
+     "seconds": 13.1
+    },
+    {
+     "S": 512,
+     "K": 20,
+     "n_options": [
+      5,
+      2,
+      24,
+      29,
+      6,
+      12,
+      2,
+      3,
+      6,
+      4,
+      7,
+      2,
+      12,
+      2,
+      2,
+      2,
+      3,
+      5,
+      2,
+      2
+     ],
+     "packed_vs_single": {
+      "max_abs_diff_block_hidden": 0.013268709182739258,
+      "max_abs_diff_marker_hidden": 3.910064697265625e-05,
+      "max_abs_diff_logits": 1.0058283805847168e-06,
+      "max_abs_diff_probs": 7.829296153061271e-08,
+      "argmax_agree": "20/20",
+      "max_abs_hidden_value": 42.74072265625,
+      "packed_len": 1246,
+      "state_len": 512,
+      "question_tokens": 734
+     },
+     "state_hidden_max_abs_diff_vs_state_only": 0.0,
+     "reverse_order_max_abs_diff_probs": 2.0455413307640669e-07,
+     "padded_batch_max_abs_diff_logits": 4.209578037261963e-07,
+     "custom_mask_vs_stock_on_unpacked_rows_max_abs_diff_logits": 0.0,
+     "negative_controls": {
+      "sequential_positions": {
+       "max_abs_diff_block_hidden": 58.285606384277344,
+       "max_abs_diff_logits": 0.05318140983581543,
+       "max_abs_diff_probs": 0.013160402134119065,
+       "argmax_agree": "14/20"
+      },
+      "blocks_see_each_other": {
+       "max_abs_diff_block_hidden": 58.68122863769531,
+       "max_abs_diff_logits": 0.20240244269371033,
+       "max_abs_diff_probs": 0.03056727870739423,
+       "argmax_agree": "8/20"
+      },
+      "sliding_window_on_sequence_index": {
+       "max_abs_diff_block_hidden": 34.62336349487305,
+       "max_abs_diff_logits": 0.0560218021273613,
+       "max_abs_diff_probs": 0.005320646045895272,
+       "argmax_agree": "15/20"
+      }
+     },
+     "seconds": 86.8
+    }
+   ]
+  }
+ ],
+ "env_end": {
+  "timestamp": "2026-09-23 17:31:17",
+  "python": "3.13.1",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+  "physical_cores": 8,
+  "logical_cpus": 16,
+  "ram_total_gb": 16.54,
+  "ram_available_gb": 6.2,
+  "versions": {
+   "torch": "2.14.0+cpu",
+   "transformers": "5.17.0",
+   "tokenizers": "0.23.2",
+   "huggingface_hub": "1.32.0",
+   "safetensors": "0.8.0",
+   "numpy": "2.5.3",
+   "psutil": "7.2.2"
+  },
+  "torch_threads": 8,
+  "torch_cpu_capability": "AVX2",
+  "power_scheme": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+  "battery": {
+   "percent": 73,
+   "plugged_in": false
+  }
+ }
+}

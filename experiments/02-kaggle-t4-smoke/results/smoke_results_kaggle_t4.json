@@ -1,0 +1,539 @@
+{
+ "started": "2026-09-23 11:53:54",
+ "tests": {
+  "env": {
+   "ok": true,
+   "result": {
+    "python": "3.12.13",
+    "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "transformers": "5.17.0",
+    "tokenizers": "0.23.2",
+    "huggingface_hub": "1.32.0",
+    "device": "cuda:0",
+    "gpus": [
+     {
+      "name": "Tesla T4",
+      "capability": [
+       7,
+       5
+      ],
+      "mem_gb": 15.64
+     },
+     {
+      "name": "Tesla T4",
+      "capability": [
+       7,
+       5
+      ],
+      "mem_gb": 15.64
+     }
+    ],
+    "nvidia_smi": "name, driver_version, memory.total [MiB]\nTesla T4, 580.159.04, 15360 MiB\nTesla T4, 580.159.04, 15360 MiB\n"
+   },
+   "seconds": 10.4
+  },
+  "exactness_ettin-68m": {
+   "ok": true,
+   "result": {
+    "fp32": {
+     "max_abs_prob_diff": 1.7881393432617188e-07,
+     "argmax_agree": 64,
+     "n_questions": 64
+    },
+    "fp16": {
+     "max_abs_prob_diff": 0.0002136528491973877,
+     "argmax_agree": 64,
+     "n_questions": 64
+    },
+    "fp32_negative_control_index_window": {
+     "max_abs_prob_diff": 0.011665523052215576,
+     "argmax_agree": 57,
+     "n_questions": 64
+    },
+    "cases": {
+     "short_records": 6,
+     "long_state_tokens": 2048,
+     "long_state_questions": 10
+    }
+   },
+   "seconds": 29.3
+  },
+  "activations_ettin-68m": {
+   "ok": true,
+   "result": {
+    "shape": {
+     "S": 2048,
+     "K": 8,
+     "rows": 2,
+     "L": 2621
+    },
+    "fp32": {
+     "global_max_abs": 8718.8,
+     "headroom_vs_fp16_max": 7.51,
+     "nonfinite_values": 0,
+     "logits_finite": true,
+     "top_modules": [
+      [
+       "layers.4.mlp.drop",
+       8718.8
+      ],
+      [
+       "layers.16",
+       8369.1
+      ],
+      [
+       "layers.13",
+       8368.4
+      ],
+      [
+       "layers.17",
+       8367.9
+      ],
+      [
+       "layers.14",
+       8367.0
+      ],
+      [
+       "layers.15",
+       8365.7
+      ],
+      [
+       "layers.18",
+       8361.7
+      ],
+      [
+       "layers.13.mlp.Wo",
+       8350.8
+      ]
+     ]
+    },
+    "fp16": {
+     "global_max_abs": 8720.0,
+     "headroom_vs_fp16_max": 7.51,
+     "nonfinite_values": 0,
+     "logits_finite": true,
+     "top_modules": [
+      [
+       "layers.4.mlp.drop",
+       8720.0
+      ],
+      [
+       "layers.16",
+       8378.4
+      ],
+      [
+       "layers.13",
+       8377.6
+      ],
+      [
+       "layers.17",
+       8377.2
+      ],
+      [
+       "layers.14",
+       8376.2
+      ],
+      [
+       "layers.15",
+       8375.0
+      ],
+      [
+       "layers.18",
+       8370.9
+      ],
+      [
+       "layers.13.mlp.Wo",
+       8360.0
+      ]
+     ]
+    }
+   },
+   "seconds": 2.6
+  },
+  "activations_modernbert-base": {
+   "ok": true,
+   "result": {
+    "shape": {
+     "S": 2048,
+     "K": 8,
+     "rows": 2,
+     "L": 2621
+    },
+    "fp32": {
+     "global_max_abs": 42470.4,
+     "headroom_vs_fp16_max": 1.54,
+     "nonfinite_values": 0,
+     "logits_finite": true,
+     "top_modules": [
+      [
+       "layers.15.mlp.Wo",
+       42470.4
+      ],
+      [
+       "layers.16",
+       42468.6
+      ],
+      [
+       "layers.15",
+       42466.5
+      ],
+      [
+       "layers.17",
+       42462.9
+      ],
+      [
+       "layers.19",
+       42460.5
+      ],
+      [
+       "layers.18",
+       42460.1
+      ],
+      [
+       "layers.21",
+       42458.3
+      ],
+      [
+       "layers.20",
+       42457.7
+      ]
+     ]
+    },
+    "fp16": {
+     "global_max_abs": 42464.0,
+     "headroom_vs_fp16_max": 1.54,
+     "nonfinite_values": 0,
+     "logits_finite": true,
+     "top_modules": [
+      [
+       "layers.15.mlp.Wo",
+       42464.0
+      ],
+      [
+       "layers.16",
+       42462.1
+      ],
+      [
+       "layers.15",
+       42460.0
+      ],
+      [
+       "layers.17",
+       42456.4
+      ],
+      [
+       "layers.19",
+       42454.0
+      ],
+      [
+       "layers.18",
+       42453.7
+      ],
+      [
+       "layers.21",
+       42451.8
+      ],
+      [
+       "layers.20",
+       42451.2
+      ]
+     ]
+    }
+   },
+   "seconds": 240.4
+  },
+  "activations_ettin-32m": {
+   "ok": true,
+   "result": {
+    "shape": {
+     "S": 2048,
+     "K": 8,
+     "rows": 2,
+     "L": 2621
+    },
+    "fp32": {
+     "global_max_abs": 4816.8,
+     "headroom_vs_fp16_max": 13.6,
+     "nonfinite_values": 0,
+     "logits_finite": true,
+     "top_modules": [
+      [
+       "layers.8",
+       4816.8
+      ],
+      [
+       "layers.7",
+       4816.5
+      ],
+      [
+       "layers.6",
+       4815.4
+      ],
+      [
+       "layers.9",
+       4813.3
+      ],
+      [
+       "layers.6.mlp.Wo",
+       4809.2
+      ],
+      [
+       "layers.2.mlp.drop",
+       4046.2
+      ],
+      [
+       "layers.6.mlp.drop",
+       2667.2
+      ],
+      [
+       "layers.5",
+       1515.9
+      ]
+     ]
+    },
+    "fp16": {
+     "global_max_abs": 4815.6,
+     "headroom_vs_fp16_max": 13.6,
+     "nonfinite_values": 0,
+     "logits_finite": true,
+     "top_modules": [
+      [
+       "layers.8",
+       4815.6
+      ],
+      [
+       "layers.7",
+       4815.3
+      ],
+      [
+       "layers.6",
+       4814.1
+      ],
+      [
+       "layers.9",
+       4812.1
+      ],
+      [
+       "layers.6.mlp.Wo",
+       4808.0
+      ],
+      [
+       "layers.2.mlp.drop",
+       4046.0
+      ],
+      [
+       "layers.6.mlp.drop",
+       2668.0
+      ],
+      [
+       "layers.5",
+       1515.7
+      ]
+     ]
+    }
+   },
+   "seconds": 8.6
+  },
+  "train_readonce_ettin-68m_S512_K8_bs16_fp16": {
+   "ok": true,
+   "result": {
+    "arch": "readonce",
+    "amp_fp16": true,
+    "S": 512,
+    "K": 8,
+    "bs": 16,
+    "rows_per_step": 16,
+    "L": 1044,
+    "median_step_ms": 1094.4,
+    "tokens_per_s": 11471.6,
+    "questions_per_s": 117.0,
+    "peak_mem_gb": 8.29,
+    "loss_first": 1.3357,
+    "loss_last": 1.0376,
+    "nonfinite_losses": 0,
+    "grad_scaler_scale_end": 65536.0
+   },
+   "seconds": 26.1
+  },
+  "train_readonce_ettin-68m_S2048_K8_bs4_fp16": {
+   "ok": true,
+   "result": {
+    "arch": "readonce",
+    "amp_fp16": true,
+    "S": 2048,
+    "K": 8,
+    "bs": 4,
+    "rows_per_step": 4,
+    "L": 2580,
+    "median_step_ms": 876.0,
+    "tokens_per_s": 10490.3,
+    "questions_per_s": 36.5,
+    "peak_mem_gb": 5.99,
+    "loss_first": 1.4545,
+    "loss_last": 0.752,
+    "nonfinite_losses": 0,
+    "grad_scaler_scale_end": 65536.0
+   },
+   "seconds": 21.6
+  },
+  "train_readonce_ettin-32m_S512_K8_bs16_fp16": {
+   "ok": true,
+   "result": {
+    "arch": "readonce",
+    "amp_fp16": true,
+    "S": 512,
+    "K": 8,
+    "bs": 16,
+    "rows_per_step": 16,
+    "L": 1044,
+    "median_step_ms": 378.3,
+    "tokens_per_s": 33190.9,
+    "questions_per_s": 338.4,
+    "peak_mem_gb": 3.53,
+    "loss_first": 1.3313,
+    "loss_last": 1.0823,
+    "nonfinite_losses": 0,
+    "grad_scaler_scale_end": 65536.0
+   },
+   "seconds": 9.6
+  },
+  "train_readonce_ettin-32m_S2048_K8_bs4_fp16": {
+   "ok": true,
+   "result": {
+    "arch": "readonce",
+    "amp_fp16": true,
+    "S": 2048,
+    "K": 8,
+    "bs": 4,
+    "rows_per_step": 4,
+    "L": 2580,
+    "median_step_ms": 338.2,
+    "tokens_per_s": 27167.3,
+    "questions_per_s": 94.6,
+    "peak_mem_gb": 2.66,
+    "loss_first": 1.4441,
+    "loss_last": 0.9443,
+    "nonfinite_losses": 0,
+    "grad_scaler_scale_end": 65536.0
+   },
+   "seconds": 8.9
+  },
+  "train_readonce_modernbert-base_S512_K8_bs8_fp16": {
+   "ok": true,
+   "result": {
+    "arch": "readonce",
+    "amp_fp16": true,
+    "S": 512,
+    "K": 8,
+    "bs": 8,
+    "rows_per_step": 8,
+    "L": 1044,
+    "median_step_ms": 910.8,
+    "tokens_per_s": 6823.1,
+    "questions_per_s": 70.3,
+    "peak_mem_gb": 8.33,
+    "loss_first": 1.4373,
+    "loss_last": 0.9221,
+    "nonfinite_losses": 0,
+    "grad_scaler_scale_end": 65536.0
+   },
+   "seconds": 21.7
+  },
+  "train_readonce_modernbert-base_S2048_K8_bs2_fp16": {
+   "ok": true,
+   "result": {
+    "arch": "readonce",
+    "amp_fp16": true,
+    "S": 2048,
+    "K": 8,
+    "bs": 2,
+    "rows_per_step": 2,
+    "L": 2580,
+    "median_step_ms": 894.4,
+    "tokens_per_s": 5215.1,
+    "questions_per_s": 17.9,
+    "peak_mem_gb": 6.58,
+    "loss_first": 1.5252,
+    "loss_last": 0.646,
+    "nonfinite_losses": 0,
+    "grad_scaler_scale_end": 32768.0
+   },
+   "seconds": 21.0
+  },
+  "train_readonce_ettin-68m_S512_K8_bs16_fp32": {
+   "ok": true,
+   "result": {
+    "oom": true,
+    "error": "OutOfMemoryError('CUDA out of memory. Tried to allocate 34.00 MiB. GPU 0 has a total capacity of 14.56 GiB of which 26.81 MiB is free. Including non-PyTorch memory, this process has 14.53 GiB memory in use. Of the allocated memory 12.48 GiB is allocated by PyTorch, and 1.92 GiB is reserved by PyTorc",
+    "arch": "readonce",
+    "S": 512,
+    "K": 8,
+    "bs": 16
+   },
+   "seconds": 17.2
+  },
+  "train_cross_ettin-68m_S512_K8_bs4_fp16": {
+   "ok": true,
+   "result": {
+    "arch": "cross",
+    "amp_fp16": true,
+    "S": 512,
+    "K": 8,
+    "bs": 4,
+    "rows_per_step": 32,
+    "L": 859,
+    "median_step_ms": 1289.8,
+    "tokens_per_s": 13475.5,
+    "questions_per_s": 24.8,
+    "peak_mem_gb": 12.08,
+    "loss_first": 1.4494,
+    "loss_last": 0.6359,
+    "nonfinite_losses": 0,
+    "grad_scaler_scale_end": 65536.0
+   },
+   "seconds": 27.7
+  },
+  "sdpa_backends_ettin-68m": {
+   "ok": true,
+   "result": {
+    "S": 2048,
+    "K": 8,
+    "bs": 2,
+    "EFFICIENT_ATTENTION": {
+     "ok": true,
+     "median_fwd_bwd_ms": 450.5
+    },
+    "MATH": {
+     "ok": true,
+     "median_fwd_bwd_ms": 1338.7
+    }
+   },
+   "seconds": 12.3
+  },
+  "flex": {
+   "ok": true,
+   "result": {
+    "L": 2368,
+    "compiled_ok": true,
+    "max_abs_diff_vs_sdpa": 0.0001220703125,
+    "flex_median_ms": 29.039,
+    "sdpa_dense_median_ms": 3.075
+   },
+   "seconds": 14.2
+  },
+  "resume_ettin-32m": {
+   "ok": true,
+   "result": {
+    "loss_continued": 1.4305552244186401,
+    "loss_resumed": 1.4305552244186401,
+    "abs_diff": 0.0,
+    "checkpoint_mb": 384.5
+   },
+   "seconds": 3.1
+  }
+ },
+ "mode": "full",
+ "finished": "2026-09-23 12:01:54"
+}

@@ -1,0 +1,87 @@
+{
+ "models": {
+  "ettin-17m": {
+   "repo": "jhu-clsp/ettin-encoder-17m",
+   "revision": "59c53d9a19ee484b200676d55e4ae240528b2bb9",
+   "resolved_sha": "59c53d9a19ee484b200676d55e4ae240528b2bb9",
+   "safetensors_bytes": 67659128,
+   "download_s": 13.1,
+   "verify": {
+    "tensors_safetensors": 47,
+    "tensors_bin": 48,
+    "shared": 47,
+    "only_in_safetensors": [],
+    "only_in_bin": [
+     "model.embeddings.tok_embeddings.weight"
+    ],
+    "mismatched": [],
+    "tied_checks": {
+     "model.embeddings.tok_embeddings.weight": {
+      "bin_embedding_equals_bin_decoder": true,
+      "bin_embedding_equals_safetensors_decoder": true
+     }
+    },
+    "all_bin_tensors_recovered": true,
+    "bin_sha": "987607455c61e7a5bbc85f7758e0512ea6d0ae4c"
+   }
+  },
+  "ettin-32m": {
+   "repo": "jhu-clsp/ettin-encoder-32m",
+   "revision": "27b98f697261919d35f3f995fee5c690921e5404",
+   "resolved_sha": "27b98f697261919d35f3f995fee5c690921e5404",
+   "safetensors_bytes": 128332000,
+   "download_s": 17.7,
+   "verify": {
+    "tensors_safetensors": 65,
+    "tensors_bin": 66,
+    "shared": 65,
+    "only_in_safetensors": [],
+    "only_in_bin": [
+     "model.embeddings.tok_embeddings.weight"
+    ],
+    "mismatched": [],
+    "tied_checks": {
+     "model.embeddings.tok_embeddings.weight": {
+      "bin_embedding_equals_bin_decoder": true,
+      "bin_embedding_equals_safetensors_decoder": true
+     }
+    },
+    "all_bin_tensors_recovered": true,
+    "bin_sha": "1b8ba06455dd44f80fc9c1ca9e22806157a57379"
+   }
+  },
+  "ettin-68m": {
+   "repo": "jhu-clsp/ettin-encoder-68m",
+   "revision": "d446589aef55657267b913c9bcce6c98b69061c7",
+   "resolved_sha": "d446589aef55657267b913c9bcce6c98b69061c7",
+   "safetensors_bytes": 273842920,
+   "download_s": 25.0,
+   "verify": {
+    "tensors_safetensors": 119,
+    "tensors_bin": 120,
+    "shared": 119,
+    "only_in_safetensors": [],
+    "only_in_bin": [
+     "model.embeddings.tok_embeddings.weight"
+    ],
+    "mismatched": [],
+    "tied_checks": {
+     "model.embeddings.tok_embeddings.weight": {
+      "bin_embedding_equals_bin_decoder": true,
+      "bin_embedding_equals_safetensors_decoder": true
+     }
+    },
+    "all_bin_tensors_recovered": true,
+    "bin_sha": "ac19ae4bc51093b31c475665ac872a936d056cc2"
+   }
+  },
+  "modernbert-base": {
+   "repo": "answerdotai/ModernBERT-base",
+   "revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+   "resolved_sha": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+   "safetensors_bytes": 598635032,
+   "download_s": 35.3
+  }
+ },
+ "timestamp": "2026-09-23 17:22:22"
+}

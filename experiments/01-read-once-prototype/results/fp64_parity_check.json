@@ -1,0 +1,41 @@
+{
+ "timestamp": "2026-09-23 20:31:52",
+ "torch": "2.14.0+cpu",
+ "state_tokens": 510,
+ "questions": 20,
+ "question_pool_seed": 1234,
+ "runs": [
+  {
+   "backbone": "ettin-68m",
+   "dtype": "float32",
+   "max_abs_diff_blocks": 6.103515625e-05,
+   "max_abs_diff_state": 0.0,
+   "n_blocks": 20,
+   "max_abs_hidden": 148.26925659179688
+  },
+  {
+   "backbone": "ettin-68m",
+   "dtype": "float64",
+   "max_abs_diff_blocks": 2.8990143619012088e-12,
+   "max_abs_diff_state": 0.0,
+   "n_blocks": 20,
+   "max_abs_hidden": 148.26923877073145
+  },
+  {
+   "backbone": "modernbert-base",
+   "dtype": "float32",
+   "max_abs_diff_blocks": 0.000370025634765625,
+   "max_abs_diff_state": 0.0,
+   "n_blocks": 20,
+   "max_abs_hidden": 42.752227783203125
+  },
+  {
+   "backbone": "modernbert-base",
+   "dtype": "float64",
+   "max_abs_diff_blocks": 3.0462269506870143e-07,
+   "max_abs_diff_state": 0.0,
+   "n_blocks": 20,
+   "max_abs_hidden": 42.752219144884776
+  }
+ ]
+}
